@@ -1,0 +1,12 @@
+services:
+  - type: static
+    name: taskhunt-web
+    buildCommand: bun install && bun run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://taskhunt-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
