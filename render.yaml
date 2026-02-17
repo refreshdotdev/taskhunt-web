@@ -1,6 +1,7 @@
 services:
-  - type: static
+  - type: web
     name: taskhunt-web
+    runtime: static
     buildCommand: bun install && bun run build
     staticPublishPath: ./dist
     envVars:
